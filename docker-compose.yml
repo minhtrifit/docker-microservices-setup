@@ -30,12 +30,14 @@ services:
       - "8081:8081"
 
   server-app:
+    build: ./server
     image: nodejs-server
     ports:
       - "5001:5001"
     restart: unless-stopped
 
   client-app:
+    build: ./client
     image: react-vite-client
     ports:
       - "5173:5173"
